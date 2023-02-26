@@ -1,0 +1,236 @@
+import { Dimensions, StyleSheet } from 'react-native'
+import R from '@app/assets/R'
+import { colors, dimensions, fonts, HEIGHT, styleView } from '@app/theme'
+
+const { width, height } = Dimensions.get('window')
+const scale = width / 375
+
+export default StyleSheet.create({
+  main: {
+    flex: 1,
+    backgroundColor: colors.white,
+  },
+  content: {
+    flex: 1,
+    backgroundColor: '#F5F5F5',
+    // paddingHorizontal: 15 * scale,
+  },
+  viewLogo: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    // backgroundColor:'yellow',
+    width: '100%',
+    paddingHorizontal: 15 * scale,
+    marginTop: 40 * scale,
+    justifyContent: 'space-between',
+  },
+  searchContainer: {
+    height: 150 * scale,
+    backgroundColor: '#FFFFFF',
+  },
+  imgLogo: {
+    top: -10,
+    height: 50 * scale,
+    width: 100 * scale,
+    // backgroundColor: 'red',
+    resizeMode: 'contain',
+  },
+  img40: {
+    width: 40,
+    height: 40,
+  },
+  view_icon_header: {
+    flexDirection: 'row',
+  },
+  input_container: {
+    borderColor: '#D9D9D9',
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    height: 40,
+    borderRadius: 20,
+    alignSelf: 'center',
+    paddingLeft: 15,
+  },
+  viewCategory: {
+    backgroundColor: '#FFFFFF',
+    marginTop: 6 * scale,
+    paddingLeft: 18 * scale,
+    // paddingHorizontal: 18 * scale,
+    // height:100
+  },
+  view_logo_category: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 20 * scale,
+    marginTop: 28 * scale,
+    marginBottom: 10 * scale,
+  },
+  view_logo_livestream: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    // marginLeft:18*scale,
+    marginTop: 10 * scale,
+    marginBottom: 13 * scale,
+  },
+  img24: {
+    width: 24 * scale,
+    height: 24 * scale,
+  },
+  txtTitle: {
+    color: colors.primary,
+    ...fonts.semi_bold16,
+    marginLeft: 11 * scale,
+  },
+  listCategory: {
+    // width:'100%',
+    marginBottom: 16 * scale,
+    // marginLeft: -12 * scale,
+  },
+  listCategory02: {
+    // width:'100%',
+    marginBottom: 16 * scale,
+  },
+  view_item_category: {
+    alignItems: 'center',
+    marginHorizontal: 20,
+    // justifyContent:'space-between',
+    // marginHorizontal: 16 * scale,
+    // backgroundColor:'red',
+    // width: 70 * scale,
+    // height: 92 * scale,
+  },
+  imgCategory: {
+    width: 60 * scale,
+    height: 60 * scale,
+    borderRadius: 16 * scale,
+    // backgroundColor:'#FFFFFF',
+  },
+  txt_item_category: {
+    color: '#033654',
+    ...fonts.regular14,
+    marginTop: 10 * scale,
+  },
+  viewLiveStream: {
+    backgroundColor: '#FFFFFF',
+    marginTop: 8 * scale,
+    paddingHorizontal: 15 * scale,
+  },
+  img_background: {
+    width: 165 * scale,
+    height: 165 * scale,
+    borderRadius: 12 * scale,
+    // backgroundColor:'red',
+    marginRight: 15 * scale,
+  },
+  view_number_live: {
+    flexDirection: 'row',
+    width: 88 * scale,
+    height: 24 * scale,
+    justifyContent: 'space-between',
+    marginTop: 9 * scale,
+    marginLeft: 9 * scale,
+    borderRadius: 20,
+  },
+  view_1_2_red: {
+    flex: 1 / 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+    backgroundColor: '#E84343',
+    flexDirection: 'row',
+  },
+  view_1_2_black: {
+    flex: 1 / 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+    backgroundColor: '#000000',
+    opacity: 0.7,
+    flexDirection: 'row',
+  },
+  txtLive: {
+    color: '#FFFFFF',
+    ...fonts.regular14,
+    marginLeft: 3,
+  },
+  txt_des_live: {
+    color: '#FFFFFF',
+    ...fonts.semi_bold14,
+    marginTop: 77 * scale,
+    marginLeft: 10 * scale,
+  },
+  view_shop: {
+    flexDirection: 'row',
+    marginTop: 4 * scale,
+    alignItems: 'center',
+    marginLeft: 10 * scale,
+  },
+  viewCommunity: {
+    width: '100%',
+    height: 122 * scale,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 8 * scale,
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: 18 * scale,
+  },
+  img56: {
+    width: 56 * scale,
+    height: 56 * scale,
+  },
+  txtCommunity: {
+    color: '#000000',
+    ...fonts.regular14,
+    marginTop: 8 * scale,
+  },
+  view_item_community: {
+    alignItems: 'center',
+  },
+  view_space_between: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    width: '100%',
+  },
+  viewForum: {
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+    marginTop: 8 * scale,
+    marginBottom: 1,
+  },
+  view_item_forum: {
+    flexDirection: 'row',
+    marginTop: 16 * scale,
+    marginLeft: 18 * scale,
+    alignItems: 'center',
+    paddingBottom: 14 * scale,
+  },
+  headerButton: {
+    ...styleView.centerItem,
+    width: 40,
+    height: 40,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: '#D9D9D9',
+  },
+  vLoadData: {
+    position: 'absolute',
+    bottom: HEIGHT * 0.12,
+    backgroundColor: colors.white,
+    width: dimensions.width - 40,
+    marginHorizontal: 20,
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderRadius: 6,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+})

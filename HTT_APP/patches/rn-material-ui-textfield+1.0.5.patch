@@ -1,0 +1,78 @@
+diff --git a/node_modules/rn-material-ui-textfield/src/components/field/index.js b/node_modules/rn-material-ui-textfield/src/components/field/index.js
+index 2056eba..16ee195 100644
+--- a/node_modules/rn-material-ui-textfield/src/components/field/index.js
++++ b/node_modules/rn-material-ui-textfield/src/components/field/index.js
+@@ -83,6 +83,7 @@ export default class TextField extends PureComponent {
+     baseColor: PropTypes.string,
+ 
+     label: PropTypes.string,
++    isRequired: PropTypes.bool,
+     title: PropTypes.string,
+ 
+     characterRestriction: PropTypes.number,
+@@ -483,7 +484,7 @@ export default class TextField extends PureComponent {
+   renderLabel(props) {
+     let offset = this.labelOffset()
+ 
+-    let { label, fontSize, labelFontSize, labelTextStyle } = this.props
++    let { label, fontSize, labelFontSize, labelTextStyle, isRequired } = this.props
+ 
+     return (
+       <Label
+@@ -492,6 +493,7 @@ export default class TextField extends PureComponent {
+         activeFontSize={labelFontSize}
+         offset={offset}
+         label={label}
++        isRequired={isRequired}
+         style={labelTextStyle}
+       />
+     )
+diff --git a/node_modules/rn-material-ui-textfield/src/components/label/index.js b/node_modules/rn-material-ui-textfield/src/components/label/index.js
+index 0174819..64dcf3e 100644
+--- a/node_modules/rn-material-ui-textfield/src/components/label/index.js
++++ b/node_modules/rn-material-ui-textfield/src/components/label/index.js
+@@ -41,11 +41,13 @@ export default class Label extends PureComponent {
+ 
+     style: Text.propTypes.style,
+     label: PropTypes.string,
++    isRequired: PropTypes.bool,
+   }
+ 
+   render() {
+     let {
+       label,
++      isRequired,
+       offset,
+       disabled,
+       restricted,
+@@ -68,8 +70,8 @@ export default class Label extends PureComponent {
+     let color = disabled
+       ? baseColor
+       : restricted
+-      ? errorColor
+-      : focusAnimation.interpolate({
++        ? errorColor
++        : focusAnimation.interpolate({
+           inputRange: [-1, 0, 1],
+           outputRange: [errorColor, baseColor, tintColor],
+         })
+@@ -111,8 +113,17 @@ export default class Label extends PureComponent {
+ 
+     return (
+       <Animated.View style={[styles.container, containerStyle]}>
+-        <Animated.Text style={[styles.text, style, textStyle]} {...props}>
+-          {label}
++        <Animated.Text children={
++          <>
++            <Text
++              children={
++                <>
++                  {label}
++                  {isRequired && <Text children={` *`} style={{ color: '#E84343' }} />}
++                </>
++              }
++            />
++          </>} style={[styles.text, style, textStyle]} {...props}>
+         </Animated.Text>
+       </Animated.View>
+     )

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "vn.com.hoathanhtuoc",
+  "variantName": "processReleaseResources",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 9,
+      "versionName": "1.100.3",
+      "outputFile": "vn.com.hoathanhtuoc_release_1.100.3_b9.apk"
+    }
+  ]
+}
